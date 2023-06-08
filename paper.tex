@@ -1,0 +1,53 @@
+\documentclass[14pt]{extarticle}  %% large while editing
+\RequirePackage{
+ , agda
+ , amssymb
+ , caption
+ , catchfilebetweentags
+ , datetime2
+ , enumitem
+ , geometry
+ , natbib
+ , newunicodechar
+ , relsize
+ , subcaption
+ , tikz-cd
+ , xcolor
+}
+
+%% \setlist{noitemsep}
+
+\geometry{margin=0.2in} % 1in to share, and 0.2 to preview
+
+\input{macros}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  linkcolor={red!40!black},
+  citecolor={red!40!black},
+  urlcolor={blue!40!black}
+}
+
+\setlength{\abovedisplayskip}{1.5ex}
+\setlength{\belowdisplayskip}{1.5ex}
+\setlength{\abovedisplayshortskip}{0ex}
+\setlength{\belowdisplayshortskip}{0ex}
+\setlength{\parskip}{0.25em}
+\setlength{\parindent}{1em}
+
+\begin{document}
+
+\maketitle
+\mathindent2em
+
+%% \begin{abstract}
+%% ...
+%% \end{abstract}
+
+\sectionl{Introduction}
+
+
+\bibliographystyle{plainnat}
+\bibliography{bib}
+\end{document}

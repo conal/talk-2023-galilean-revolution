@@ -1,0 +1,127 @@
+\newcommand\nc\newcommand
+\nc\rnc\renewcommand
+
+\input{agda-commands}
+\input{unicode}
+
+\nc\out[1]{}
+
+%% \nc\noteOut[2]{\note{#1}\out{#2}}
+
+%% To redefine for a non-draft
+\nc\indraft[1]{#1}
+
+%% I think \note gets defined by beamer.
+\let\note\undefined
+
+\definecolor{noteColor}{rgb}{0.5,0,0.3}
+
+\nc\note[1]{\indraft{\textcolor{noteColor}{#1}}}
+
+\nc\notefoot[1]{\note{\footnote{\note{#1}}}}
+
+\nc\todo[1]{\note{To do: #1}}
+
+\nc\eqnlabel[1]{\label{equation:#1}}
+\nc\eqnref[1]{Equation~\ref{equation:#1}}
+\nc\eqnreftwo[2]{Equations~\ref{equation:#1} and \ref{equation:#2}}
+
+\nc\figlabel[1]{\label{fig:#1}}
+\nc\figref[1]{Figure~\ref{fig:#1}}
+\nc\figreftwo[2]{Figures~\ref{fig:#1} and \ref{fig:#2}}
+
+\nc\seclabel[1]{\label{sec:#1}}
+\nc\secref[1]{Section~\ref{sec:#1}}
+\nc\secreftwo[2]{Sections~\ref{sec:#1} and~\ref{sec:#2}}
+\nc\secrefs[2]{Sections \ref{sec:#1} through \ref{sec:#2}}
+
+\nc\appref[1]{Appendix~\ref{sec:#1}}
+
+%% The name \secdef is already taken
+\nc\sectiondef[1]{\section{#1}\seclabel{#1}}
+\nc\subsectiondef[1]{\subsection{#1}\seclabel{#1}}
+\nc\subsubsectiondef[1]{\subsubsection{#1}\seclabel{#1}}
+
+\nc\needcite{\note{[ref]}}
+
+\nc\sectionl[1]{\section{#1}\seclabel{#1}}
+\nc\subsectionl[1]{\subsection{#1}\seclabel{#1}}
+
+\nc\workingHere{
+\vspace{1ex}
+\begin{center}
+\setlength{\fboxsep}{3ex}
+\setlength{\fboxrule}{4pt}
+\huge\textcolor{red}{\framebox{Working here}}
+\end{center}
+\vspace{1ex}
+}
+
+%% For multiple footnotes at a point. Adapted to recognize \notefoot as well
+%% as \footnote. See https://tex.stackexchange.com/a/71347,
+\let\oldFootnote\footnote
+\nc\nextToken\relax
+\rnc\footnote[1]{%
+    \oldFootnote{#1}\futurelet\nextToken\isFootnote}
+\nc\footcomma[1]{\ifx#1\nextToken\textsuperscript{,}\fi}
+\nc\isFootnote{%
+    \footcomma\footnote
+    \footcomma\notefoot
+}
+
+% Arguments: env, label, caption, body
+\nc\figdefG[4]{\begin{#1}%[tbp]
+\begin{center}
+#4
+\end{center}
+\vspace{-1ex}
+\caption{#3}
+\figlabel{#2}
+\end{#1}}
+
+% Arguments: label, caption, body
+\nc\figdef{\figdefG{figure}}
+\nc\figdefwide{\figdefG{figure*}}
+
+% Arguments: label, caption, body
+\nc\figrefdef[3]{\figref{#1}\figdef{#1}{#2}{#3}}
+
+\nc\picfile[1]{../Figures/#1.pdf}
+
+\nc\incpicW[2]{\includegraphics[width=#1\linewidth]{\picfile{#2}}}
+\nc\incpic{\incpicW{0.7}}
+%% \nc\incpic[1]{\includegraphics[width=0.7\linewidth]{\picfile{#1}}}
+
+\nc\stdlibCitet[1]{\citet[\AM{#1}]{agda-stdlib}}
+\nc\stdlibCitep[1]{\citep[\AM{#1}]{agda-stdlib}}
+\nc\stdlibCite\stdlibCitep
+
+%% https://tex.stackexchange.com/questions/94699/absolutely-definitely-preventing-page-break
+
+\renewenvironment{samepage}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+\nc\source{None}
+
+\nc\twocolX[3]{\\[-1ex]
+\begin{minipage}[c]{#1\linewidth}{#2}\end{minipage}
+\begin{minipage}[c]{\linewidth}{#3}\end{minipage}\\[-1ex]}
+\nc\twocol{\twocolX{0.45}}
+
+\nc\threecolX[5]{\\[-1ex]
+\begin{minipage}[c]{#1\linewidth}{#3}\end{minipage}
+\begin{minipage}[c]{#2\linewidth}{#4}\end{minipage}
+\begin{minipage}[c]{\linewidth}{#5}\end{minipage}\\[-1ex]}
+\nc\threecol{\threecolX{0.3}{0.3}}
+
+\nc\agda[1]{\ExecuteMetaData[\source.tex]{#1}}
+\nc\agdaIn[2]{{\rnc\source{#1} \agda{#2}}}
+
+
+\author{Conal Elliott}
+\title{Timely computing}
+\date{Early draft of \DTMnow{} GMT-8}
+

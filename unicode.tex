@@ -1,0 +1,115 @@
+\nc\uni[2]{\newunicodechar{#1}{\ensuremath{#2}}}
+
+%% Remember to express horizontal movement in ems and vertical in exs and
+%% nothing in pt, to adapt to font size changes.
+
+\uni{⦃}{\{\hspace{-0.38em}\{}
+\uni{⦄}{\}\hspace{-0.38em}\}}
+
+\nc\sm[1]{\mathsf{#1}}
+%% \uni{ℕ}{\sm{N}}
+%% \uni{𝔹}{\sm{B}}
+%% \uni{𝔽}{\sm{F}}
+
+\usepackage{bm}
+\uni{ℕ}{\mathbb{N}}
+\uni{ℚ}{\mathbb{Q}}
+
+\usepackage{mathrsfs}
+\uni{𝒯}{\mathscr{T}}
+%% \uni{𝒯}{\mathfrak{T}}
+%% \uni{𝒯}{\mathcal{T}}
+
+\uni{ℓ}{\ell}
+
+\uni{⊗}{\otimes}
+\uni{×}{\times}
+\uni{∘}{\circ}
+\uni{∙}{\bullet}
+\uni{▵}{\vartriangle}
+\uni{∎}{\blacksquare}
+
+\usepackage{stmaryrd}
+
+\uni{⇾}{\rightarrow}
+\uni{⇨}{\rightarrowtriangle}
+\uni{↝}{\leadsto}
+\uni{↓}{\downarrow}
+\uni{⇓}{\Downarrow}
+\uni{↑}{\uparrow}
+
+\uni{δ}{\delta}
+\uni{λ}{\lambda}
+
+\uni{≈}{\approx}
+\uni{≡}{\equiv}
+\uni{≗}{\circeq}
+\uni{∃}{\exists}
+\uni{∀}{\forall}
+\uni{∈}{\in}
+\uni{≤}{\le}
+\uni{⊹}{\dotplus}
+\uni{◇}{\diamond}
+\uni{∅}{\varnothing}
+\uni{∩}{\cap}
+\uni{⊔}{\sqcup}
+\uni{⊓}{\sqcap}
+% \uni{⋯}{\cdots}
+\uni{⋯}{\mathop{\cdot\cdot\cdot}}
+
+\uni{∧}{\wedge}
+\uni{∨}{\vee}
+\uni{⊤}{\top}
+\uni{⊥}{\bot}
+
+%% Subscripts and superscripts
+\nc\subs[1]{\ensuremath{_{\scriptscriptstyle #1}}}
+\nc\sups[1]{\ensuremath{^{\scriptscriptstyle #1}}}
+
+\uni{₀}{\subs 0}
+\uni{₁}{\subs 1}
+\uni{₂}{\subs 2}
+\uni{₃}{\subs 3}
+\uni{₄}{\subs 4}
+\uni{₅}{\subs 5}
+\uni{₆}{\subs 6}
+\uni{₇}{\subs 7}
+\uni{₈}{\subs 8}
+\uni{₉}{\subs 9}
+
+%% %%https://tex.stackexchange.com/questions/486120/using-the-unicode-prime-character-outside-math-mode-with-unicode-math-and-newuni
+%% \AtBeginDocument{\newunicodechar{′}{\ensuremath{'}}}
+
+\uni{′}{\ensuremath{'}}
+\uni{″}{\ensuremath{'\hspace{-1pt}'}}
+
+\usepackage{bbding}
+\uni{✶}{\mbox{\tiny \SixStar}}
+
+\uni{✢}{\raisebox{0.75pt}{\scalebox{0.65}{+}}}
+\nc\carrot{\;\^{\;}}
+\nc\inv{\ensuremath{^{-1}}}
+
+
+%% To do: perhaps remove some substitutions below, and use the following.
+\nc\SubStar[1]{\StrSubstitute{#1}{*}{\ast}}
+
+\nc\ehat[1]{\ensuremath{\hat{#1}}}
+\nc\edot[1]{\ensuremath{\dot{#1}}}
+\nc\etilde[1]{\ensuremath{\tilde{#1}}}
+%% \nc\etilde[1]{\~{#1}}
+
+\usepackage{xstring}
+\DeclareRobustCommand{\AgdaFormat}[2]{\IfStrEqCase{#1}{
+  {\AU{}*\AU{}}{\_{\ast}\_}
+  {0̇}{\edot{0}} {1̇}{\edot{1}}
+  {+̇}{\edot{✢}}
+  {*̇}{\edot{\ast}}
+  {+}{✢}{\AU{}+̇\AU{}}{\_\edot{✢}\_}
+  {*}{\ast}{\AU{}*̇\AU{}}{\_\edot{\ast}\_}
+  {+̃}{\etilde{✢}}{\AU{}+̃\AU{}}{\_\etilde{✢}\_}
+  {*̃}{\etilde{\ast}}{\AU{}*̃\AU{}}{\_\etilde{\ast}\_}
+  {f̃}{\etilde{f}}{x̃}{\etilde{x}}
+  {f̃⇃}{\etilde{\AFi{f}}}
+
+{}{}}[#2]}

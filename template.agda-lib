@@ -1,0 +1,3 @@
+name: name-goes-here
+depend: standard-library hardware correct-hardware
+include: src
