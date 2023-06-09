@@ -120,6 +120,27 @@
 \nc\agda[1]{\ExecuteMetaData[\source.tex]{#1}}
 \nc\agdaIn[2]{{\rnc\source{#1} \agda{#2}}}
 
+%% Row and column separation in commutative diagrams, in ex
+\nc\cdSeps[2]{\tikzcdset{row sep/normal=#1ex, column sep/normal=#2ex}}
+\nc\cdSep[1]{\cdSeps{#1}{#1}}
+
+\nc\cdMath{\tikzcdset{every diagram/.append style = {math mode = true}}}
+
+\nc\arr[2]{\arrow{#1}[description]{#2}}
+
+%% Horizontally written morphism, given domain, morphism, codomain
+\nc\morphismH[3]{%
+\begin{tikzcd}
+  #1 \arr{rr}{#2} \&\& #3
+\end{tikzcd}}
+
+%% Left & right object/morphism/object triples, top & bottom morphisms
+\nc\commSquare[9]{%
+\begin{tikzcd}
+  #1 \arr{dd}{#2} \arr{rr}{#7} \&\& #4 \arr{dd}{#5} \\
+  \& #9 \\
+  #3 \arr{rr}{#8} \&\& #6
+\end{tikzcd}}
 
 \author{Conal Elliott}
 %% \title{A future of scalably reliable and efficient computing}

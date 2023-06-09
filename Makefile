@@ -1,7 +1,7 @@
 PAPER=paper
 TALK=talk
 
-all: latex/$(PAPER).pdf latex/$(TALK).pdf
+all: latex/$(TALK).pdf
 
 src = src
 

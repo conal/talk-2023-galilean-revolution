@@ -37,8 +37,9 @@
 %% \hspace{1cm}
 %% \includegraphics[keepaspectratio=true,height=1.4cm]{iohk}
 
-
 \begin{document}
+
+\parskip2ex
 
 \begin{center}
 \setbeamerfont{title}{size=\large}
@@ -48,6 +49,37 @@
 \setbeamerfont{subtitle}{size=\large}
 \end{center}
 
+\begin{frame}{The Scientific Revolution}
+\begin{itemize}\itemsep3ex
+\item Before the 17th century: conjectures about physical reality.
+\item Galileo \& Newton: theories, experiments, and refutation. \emph{(quote)}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{From guessing to knowing}
+\vspace{8ex}
+\begin{quotation}
+In Galileo's time, professors of philosophy and theology---the subjects were inseparable---produced grand discourses on the nature of reality, the structure of the universe, and the way the world works, all based on sophisticated metaphysical arguments. Meanwhile, Galileo measured how fast balls roll down inclined planes. How mundane! But the learned discourses, while grand, were vague. Galileo's investigations were clear and precise. The old metaphysics never progressed, while Galileo's work bore abundant, and at length spectacular, fruit. Galileo too cared about the big questions, but he realized that getting genuine answers requires patience and humility before the facts.
+\end{quotation}
+Frank Wilczek, \emph{The Lightness of Being: Mass, Ether, and the Unification of Forces} (pp. 7-8)
+\end{frame}
+
+\begin{frame}{Our computational crisis and opportunity}
+\begin{itemize}\itemsep3ex \parskip2ex
+\item Sequential foundations vs reliability and efficiency.
+Unsustainable coping strategies:
+ \begin{itemize}\itemsep3ex
+ \item Programming-only languages
+ \item Testing
+ \item Model checking, SMT, graph isomorphism
+ \item Properties
+ %% \item The Brandolini Inequality. \emph{(quote)}
+ \item Sequential VMs/ISAs \& von Neumann bottleneck
+ \end{itemize}
+\item Proofs: now formalized and automated
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Scalability}
 \begin{itemize}\itemsep3ex
 \item Efficiency: correctness (proof).
@@ -55,27 +87,42 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{The Scientific Revolution}
+\begin{frame}{Haskell}
 \begin{itemize}\itemsep3ex
-\item Before the 17th century: conjectures about physical reality.
-\item Galileo \& Newton: theories, experiments, and refutation. \emph{quote}
+\item Denotative core: good for correctness, but only ``on paper''.
+\item ``Monadic IO'' [sic]: sequential and non-denotative: thwarting efficiency and reliability.
+\item ``Functional core, imperative shell'', thwarting scalability.
+%% \item Modern variants: free monads and effect systems.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Our crisis and opportunity}
+\begin{frame}{Beyond Haskell}
+
+Haskell types:
 \begin{itemize}\itemsep3ex
-\item Sequential foundations vs reliability and efficiency.
-Unsustainable coping strategies:
- \begin{itemize}\itemsep3ex
- \item Programming-only languages
- \item Testing
- \item Properties
- \item Model checking, SMT, graph isomorphism
- %% \item The Brandolini Inequality. \emph{quote}
- \end{itemize}
-\item Proofs: formalized and automated
+\item Prevent some bugs.
+\item Miss the heart of the matter (correctness).
+\end{itemize}
+
+\pause
+\vspace{4ex}
+
+Agda (dependent) types:
+\begin{itemize}\itemsep3ex
+\item Full specification.
+\item Simpler and more general.
+\item Full computation in types/propositions.
 \end{itemize}
 \end{frame}
 
+\begin{frame}{What is correct programming like?}
+
+\begin{itemize}\itemsep3ex
+\item Parsing
+\item Hardware
+\end{itemize}
+
+
+\end{frame}
 
 \end{document}
