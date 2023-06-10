@@ -1,13 +1,9 @@
-Draft paper: *Title Goes Here*
+## A Galilean revolution for computing
 
-[See latest PDF here.](http://conal.net/papers/foo/paper.pdf)
-Comments appreciated as GitHub issues and pull requests or email (firstname@firstname.net).
+Unboundedly scalable reliability and efficiency
 
-There is also [an accompanying talk](http://conal.net/talks/foo.pdf).
+A talk by Conal Elliott for ZuriHac 2023
 
-Run "make" to compile the sources and typeset the paper.
-The Agda code should work at least with [Agda](https://github.com/agda/agda) 2.6.2.2 and [agda-stdlib](https://github.com/agda/agda-stdlib) version 1.7.
-
-**Abstract:**
-
-> ...
+Right now, in 2023, we are at a phenomenally powerful pivot point in human civilization.
+Thanks to progress made over the last 100 years, we now have the tools to construct reliable, efficient computation of unbounded sophistication.
+Moreover, Haskellers are prepared better than most to participate in this coming revolution and even help initiate it.
