@@ -41,3 +41,10 @@ see: $(PAPER).see
 
 clean:
 	rm -rf _build latex
+
+web: .token
+
+.token: latex/$(TALK).pdf
+	scp $< conal@conal.net:/home/conal/domains/conal/htdocs/talks/galilean-revolution.pdf
+	@touch $@
+
