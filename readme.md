@@ -2,7 +2,7 @@
 
 Unboundedly scalable reliability and efficiency
 
-A talk by Conal Elliott for ZuriHac 2023
+A talk by [Conal Elliott](http://conal.net) for ZuriHac 2023
 
 [Video](https://www.youtube.com/watch?v=k6rY5Mvx84E)
 
