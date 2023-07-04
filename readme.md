@@ -1,6 +1,4 @@
-## A Galilean revolution for computing
-
-Unboundedly scalable reliability and efficiency
+## A Galilean revolution for computing: Unboundedly scalable reliability and efficiency
 
 A talk by [Conal Elliott](http://conal.net) for ZuriHac 2023
 
