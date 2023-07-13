@@ -19,4 +19,4 @@ See also [my invitation to play/learn/work together](https://github.com/conal/Co
 
 Erratum:
 
-*   At 38:32 I misattributed the paper "Tackling the Awkward Squad: monadic input/output, concurrency, exceptions, and foreign-language calls in Haskell" written by (only) Simon Peyton Jones.
+*   At 38:32 I misattributed the paper "Tackling the Awkward Squad: monadic input/output, concurrency, exceptions, and foreign-language calls in Haskell", which was written by (only) Simon Peyton Jones.
