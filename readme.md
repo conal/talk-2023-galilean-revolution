@@ -16,3 +16,7 @@ As with the Scientific Revolution begun by Galileo and others in the 17th centur
 The slides at the end of the talk are from [*Symbolic and Automatic Differentiation of Languages*](https://github.com/conal/paper-2021-language-derivatives#readme).
 
 See also [my invitation to play/learn/work together](https://github.com/conal/Collaboration).
+
+Erratum:
+
+*   At 38:32 I mistitled and misattributed the paper "Tackling the Awkward Squad: monadic input/output, concurrency, exceptions, and foreign-language calls in Haskell" written by (only) Simon Peyton Jones.
