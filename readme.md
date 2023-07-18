@@ -19,4 +19,6 @@ See also [my invitation to play/learn/work together](https://github.com/conal/Co
 
 Erratum:
 
+*   At 13:43 I got the year of John Backus's Turing Award wrong.
+    It was really 1977.
 *   At 38:32 I misattributed the paper "Tackling the Awkward Squad: monadic input/output, concurrency, exceptions, and foreign-language calls in Haskell", which was written by (only) Simon Peyton Jones.
