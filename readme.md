@@ -17,7 +17,7 @@ The slides at the end of the talk are from [*Symbolic and Automatic Differentiat
 
 See also [my invitation to play/learn/work together](https://github.com/conal/Collaboration).
 
-Erratum:
+Errata:
 
 *   At 13:43 I got the year of John Backus's Turing Award wrong.
     It was really 1977.
